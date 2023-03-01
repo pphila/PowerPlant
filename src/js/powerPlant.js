@@ -65,29 +65,41 @@
 // Functional approach with Curry
 
 // Function Factory
-const changeState = (prop) => {
-  return (value) => {
-    return (state) => ({
-      ...state,
-      [prop] : (state[prop] || 0) + value
-    })
-  }
-};
+// const changeState = (prop) => {
+//   return (value) => {
+//     return (state) => ({
+//       ...state,
+//       [prop] : (state[prop] || 0) + value
+//     })
+//   }
+// };
 
-// Function stores our state
-const storeState = () => {
-  let currentState = {};
-  return (stateChangeFunction = state => state) => {
-    const newState = stateChangeFunction(currentState);
-    currentState = {...newState};
-    return newState;
-  }
-};
+// // Function stores our state
+// const storeState = () => {
+//   let currentState = {};
+//   return (stateChangeFunction = state => state) => {
+//     const newState = stateChangeFunction(currentState);
+//     currentState = {...newState};
+//     return newState;
+//   }
+// };
 
-const stateControl = storeState();
+// const stateControl = storeState();
 
-const rePot = changeState("soil")(5);
-const growJuice = changeState("fertilizer")(10);
-const photosynthesize = changeState("light")(20);
-const hydrate = changeState("water")(15);
-const wormTea = changeState("fertilizer")(20);
+// const rePot = changeState("soil")(5);
+// const growJuice = changeState("fertilizer")(10);
+// const photosynthesize = changeState("light")(20);
+// const hydrate = changeState("water")(15);
+// const wormTea = changeState("fertilizer")(20);
+
+// window.addEventListener("load", function() {
+//   document.getElementById("repot").onclick = function() {
+//     const newState = stateControl(rePot);
+//     document.getElementById("soil-value").innerText = `Soil: ${newState.soil}`;
+//   };
+
+//   document.getElementById("show-state").onClick = function() {
+//     const currentState = stateControl();
+//     document.getElementById('soil-value').innerText = `Soil: ${currentState.soil}`;
+//   };
+// });
